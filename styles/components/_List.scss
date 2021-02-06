@@ -1,0 +1,91 @@
+.List{
+    &__Task{
+        list-style: none;
+        display: grid;
+        grid-template-columns: 20px 1fr 20px 20px;
+        grid-gap: 10px;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    &__TaskName{
+        font-size: 14px;
+        color: black;
+    }
+    &__Priority{
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+    }
+    .is-green{
+        background-color: #9dc83c;
+        box-shadow: inset 2px 2px 5px .5px #c3ec62,
+                    1px 1px 3px 1px rgb(173, 173, 173);
+    }
+    .is-red{
+        background-color: #d0222a;
+        box-shadow: inset 2px 2px 5px .5px #e96269,
+                    1px 1px 3px 1px rgb(173, 173, 173);
+    }
+    .is-yellow{
+        background-color: #ffad1d;
+        box-shadow: inset 2px 2px 5px .5px #ffc766,
+                    1px 1px 3px 1px rgb(173, 173, 173);
+    }
+    &__Info{
+        width: 20px;
+        height: 20px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__Check{
+        position: relative;
+        width: 20px;
+        height: 20px;
+        div , input{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        input{
+            z-index: 2;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .noCheck{
+            background: none;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: .3s all;
+            opacity: 1;
+            box-shadow: inset 1.5px 1.5px 2px 1px rgb(199, 199, 199),
+                        1px 1px 2px 1.5px rgb(214, 214, 214);
+        }
+        .Check{
+            opacity: 0;
+            transition: .3s all;
+            background:  linear-gradient(to bottom, #f0ae72,#ed7d5c);
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 2px 1px rgb(194, 194, 194);
+            img{
+                position: absolute;
+                display: block;
+                top: 1px;
+                left: 1px;
+                width: 18px;
+                height: 18px;
+                border-radius: 8px;
+            }
+        }
+        input:checked ~ .Check{
+            opacity: 1;
+        }
+        input:checked ~ .noCheck{
+            opacity: 0;
+        }
+    }
+}

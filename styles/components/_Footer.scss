@@ -1,0 +1,94 @@
+.Footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    background: linear-gradient(to top, #f0efeb 85%, #f0efeb00);
+    padding: 15px;
+    &__Buttons{
+        display: flex;
+        width: 130px;
+        height: 60px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 30px;
+        background-color: #f0efeb;
+        box-shadow: 1.5px 1.5px 3px .5px rgb(189, 189, 189),
+                    -1.5px -1.5px 3px .5px white;
+        svg{
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            transition: .3s all;
+            path{
+                fill: #b4b3b0;
+            }
+            .is-active{
+                fill: black;
+            }
+        }
+        svg:hover{
+            transform: scale(1.2) rotate(5deg);
+        }
+    }
+    &__Done{
+        width: 60px;
+        height: 60px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        background: linear-gradient(to top,#f67550,#eea96f);
+        box-shadow: 1px 1px 4px .5px rgb(175, 175, 175);
+        transition: .3s all;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1) rotate(5deg);
+        }
+        svg{
+            width: 25px;
+            height: 25px;
+            path{
+                fill: white;
+            }
+        }
+    }
+    &__Add{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        background: linear-gradient(to top,#f67550,#eea96f);
+        box-shadow: 1px 1px 4px .5px rgb(175, 175, 175);
+        transition: .3s all;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1) rotate(5deg);
+        }
+        svg{
+            width: 25px;
+            height: 25px;
+            path{
+                fill: white;
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    .Footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+}

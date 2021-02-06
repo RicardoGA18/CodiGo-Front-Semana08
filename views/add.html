@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir - Reto Semana 08 - CodiGo :)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- Sass Compilado -->
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <main class="Container">
+        <h1 class="Title">Añadir Tarea</h1>
+        <form class="FormAdd">
+            <p class="Percent__Number">¿De qué vá tu tarea?</p>
+            <input type="text" placeholder="&#128221; Nombre de la Tarea">
+            <textarea placeholder="&#128172; Escribe un comentario..."></textarea>
+            <p class="Percent__Number">¿Cuánto tiempo te tomará?</p>
+            <input type="number" placeholder="&#128338; Horas" min="0">
+            <input type="number" placeholder="&#128338; Minutos" min="0" max="60">
+            <p class="Percent__Number">¿Qué tan importante es?</p>
+            <select>
+                <option value="">&#10069; Prioridad</option>
+                <option value="minor">Menor &#128215;</option>
+                <option value="intermediate">Intermedio &#128210;</option>
+                <option value="major">Mayor &#128213;</option>
+            </select>
+            <p class="Percent__Number">¿Cuándo lo debes terminar?</p>
+            <input type="date">
+            <div class="FooterAdd">
+                <a href="../index.html" class="FooterAdd__Cancel">
+                    <p>&#10005;</p>
+                </a>
+                <div class="FooterAdd__Save">
+                    <p>&#10003; SAVE</p>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* Global*/
+*, *::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    background: linear-gradient(to bottom,#feb97e, #fc8d6e);
+    min-height: 100vh;
+    padding: 0; 
+}
+a{
+    text-decoration: none;
+}
+img,input,svg,div{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+input:focus,textarea:focus,select:focus{
+    outline: none;
+}
+.Title{
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+/*Layout*/
+.Container{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    background-color: #f0efeb;
+    min-height: 100vh;
+    padding: 15px 15px 95px;
+    position: relative;
+}
+
+
+/*Responsive*/
+@media screen and (min-width: 768px){
+    html{
+        padding: 40px 30px;
+    }
+    .Container{
+        margin: 0 auto;
+        border-radius: 30px;
+        max-width: 500px;
+        min-height: 600px;
+        box-shadow: 3px 3px 8px 4px rgba(163, 117, 47, 0.5);
+    }
+}
+
+/*Components*/
+@import './components/Percent';
+@import './components/List';
+@import './components/Footer';
+@import './components/History';
+@import './components/FormAdd';
+@import './components/FooterAdd';
