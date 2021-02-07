@@ -15,20 +15,20 @@
         <h1 class="Title">Añadir Tarea</h1>
         <form class="FormAdd">
             <p class="Percent__Number">¿De qué vá tu tarea?</p>
-            <input type="text" placeholder="&#128221; Nombre de la Tarea">
-            <textarea placeholder="&#128172; Escribe un comentario..."></textarea>
+            <input type="text" placeholder="&#128221; Nombre de la Tarea" required>
+            <textarea placeholder="&#128172; Escribe un comentario..." required></textarea>
             <p class="Percent__Number">¿Cuánto tiempo te tomará?</p>
-            <input type="number" placeholder="&#128338; Horas" min="0">
-            <input type="number" placeholder="&#128338; Minutos" min="0" max="60">
-            <p class="Percent__Number">¿Qué tan importante es?</p>
-            <select>
+            <input type="number" placeholder="&#128338; Horas" min="0" required>
+            <input type="number" placeholder="&#128338; Minutos" min="1" max="60" required>
+            <p class="Percent__Number">¿Cuán importante es?</p>
+            <select required>
                 <option value="">&#10069; Prioridad</option>
                 <option value="minor">Menor &#128215;</option>
-                <option value="intermediate">Intermedio &#128210;</option>
+                <option value="medium">Intermedio &#128210;</option>
                 <option value="major">Mayor &#128213;</option>
             </select>
             <p class="Percent__Number">¿Cuándo lo debes terminar?</p>
-            <input type="date">
+            <input type="date" required>
             <div class="FooterAdd">
                 <a href="../index.html" class="FooterAdd__Cancel">
                     <p>&#10005;</p>
@@ -39,5 +39,6 @@
             </div>
         </form>
     </main>
+    <script src="../scripts/app/add.js"></script>
 </body>
 </html>

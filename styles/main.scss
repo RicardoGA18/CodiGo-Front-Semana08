@@ -37,6 +37,12 @@ input:focus,textarea:focus,select:focus{
     position: relative;
 }
 
+.Today{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
 
 /*Responsive*/
 @media screen and (min-width: 768px){
@@ -59,3 +65,7 @@ input:focus,textarea:focus,select:focus{
 @import './components/History';
 @import './components/FormAdd';
 @import './components/FooterAdd';
+@import './components/NoTask';
+@import './components/DoneList';
+@import './components/ModalInfo';
+@import './components/FooterInfo';

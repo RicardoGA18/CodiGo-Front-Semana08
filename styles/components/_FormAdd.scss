@@ -53,10 +53,4 @@
         width: 100%;
         height: 100%;
     }
-    option[value="1"]::after,option[value="2"]::after,option[value="3"]::after{
-        width: 10px;
-        height: 10px;
-        border-radius: 5px;
-        background-color: green;
-    }
 }

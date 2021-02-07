@@ -1,4 +1,4 @@
-.FooterAdd{
+.FooterInfo{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -9,29 +9,10 @@
     height: 90px;
     background: linear-gradient(to top, #f0efeb 85%, #f0efeb00);
     padding: 15px;
-    border: none;
-    &__Cancel{
-        width: 60px;
-        height: 60px;
-        border-radius: 30px;
+    &__Button{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 20px;
-        cursor: pointer;
-        box-shadow: 1.5px 1.5px 3px .5px rgb(189, 189, 189),
-                    -1.5px -1.5px 3px .5px white;
-        p{
-            color: black;
-            font-size: 15px;
-            font-family: 'Noto Sans JP', sans-serif;
-            padding: 0;
-        }
-    }
-    &__Save{
         width: 130px;
         height: 60px;
-        display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 30px;
@@ -40,14 +21,14 @@
         cursor: pointer;
         p{
             color: white;
-            font-size: 20px;
+            font-size: 15px;
             font-family: 'Noto Sans JP', sans-serif;
             padding: 0;
         }
     }
 }
 @media screen and (min-width: 768px){
-    .FooterAdd{
+    .FooterInfo{
         position: absolute;
         bottom: 0;
         left: 0;
