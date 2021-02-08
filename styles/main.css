@@ -467,6 +467,26 @@ input:focus, textarea:focus, select:focus {
   height: 100%;
 }
 
+.FormAdd input[type="text"]:focus:invalid, .FormAdd input[type="number"]:focus:invalid, .FormAdd textarea:focus:invalid {
+  -webkit-box-shadow: inset 3px 3px 5px 0.5px #d4d4d4, inset -3px -3px 5px 0.5px rgba(255, 255, 255, 0.63), -0.5px -0.5px 8px 0.5px #fa9999;
+          box-shadow: inset 3px 3px 5px 0.5px #d4d4d4, inset -3px -3px 5px 0.5px rgba(255, 255, 255, 0.63), -0.5px -0.5px 8px 0.5px #fa9999;
+}
+
+.FormAdd input[type="text"]:focus:valid, .FormAdd input[type="number"]:focus:valid, .FormAdd textarea:focus:valid {
+  -webkit-box-shadow: inset 3px 3px 5px 0.5px #d4d4d4, inset -3px -3px 5px 0.5px rgba(255, 255, 255, 0.63), -0.5px -0.5px 8px 0.5px #63f1c2;
+          box-shadow: inset 3px 3px 5px 0.5px #d4d4d4, inset -3px -3px 5px 0.5px rgba(255, 255, 255, 0.63), -0.5px -0.5px 8px 0.5px #63f1c2;
+}
+
+.FormAdd select:focus:invalid, .FormAdd input[type="date"]:focus:invalid {
+  -webkit-box-shadow: 0px 0px 8px 1px #fa9999;
+          box-shadow: 0px 0px 8px 1px #fa9999;
+}
+
+.FormAdd select:focus:valid, .FormAdd input[type="date"]:focus:valid {
+  -webkit-box-shadow: 0px 0px 8px 1px #63f1c2;
+          box-shadow: 0px 0px 8px 1px #63f1c2;
+}
+
 .FooterAdd {
   position: fixed;
   bottom: 0;
@@ -503,6 +523,8 @@ input:focus, textarea:focus, select:focus {
           align-items: center;
   margin-right: 20px;
   cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
   -webkit-box-shadow: 1.5px 1.5px 3px 0.5px #bdbdbd, -1.5px -1.5px 3px 0.5px white;
           box-shadow: 1.5px 1.5px 3px 0.5px #bdbdbd, -1.5px -1.5px 3px 0.5px white;
 }
@@ -512,6 +534,11 @@ input:focus, textarea:focus, select:focus {
   font-size: 15px;
   font-family: 'Noto Sans JP', sans-serif;
   padding: 0;
+}
+
+.FooterAdd__Cancel:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .FooterAdd__Save {
@@ -528,6 +555,8 @@ input:focus, textarea:focus, select:focus {
           align-items: center;
   border-radius: 30px;
   border: none;
+  -webkit-transition: .3s all;
+  transition: .3s all;
   background: -webkit-gradient(linear, left bottom, left top, from(#f67550), to(#eea96f));
   background: linear-gradient(to top, #f67550, #eea96f);
   -webkit-box-shadow: 1px 1px 4px 0.5px #afafaf;
@@ -540,6 +569,11 @@ input:focus, textarea:focus, select:focus {
   font-size: 20px;
   font-family: 'Noto Sans JP', sans-serif;
   padding: 0;
+}
+
+.FooterAdd__Save:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {
@@ -764,6 +798,8 @@ input:focus, textarea:focus, select:focus {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 30px;
+  -webkit-transition: .3s all;
+  transition: .3s all;
   background: -webkit-gradient(linear, left bottom, left top, from(#f67550), to(#eea96f));
   background: linear-gradient(to top, #f67550, #eea96f);
   -webkit-box-shadow: 1px 1px 4px 0.5px #afafaf;
@@ -776,6 +812,11 @@ input:focus, textarea:focus, select:focus {
   font-size: 15px;
   font-family: 'Noto Sans JP', sans-serif;
   padding: 0;
+}
+
+.FooterInfo__Button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {

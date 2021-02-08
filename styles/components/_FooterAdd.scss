@@ -19,6 +19,7 @@
         align-items: center;
         margin-right: 20px;
         cursor: pointer;
+        transition: .3s all;
         box-shadow: 1.5px 1.5px 3px .5px rgb(189, 189, 189),
                     -1.5px -1.5px 3px .5px white;
         p{
@@ -28,6 +29,9 @@
             padding: 0;
         }
     }
+    &__Cancel:hover{
+        transform: scale(1.1);
+    }
     &__Save{
         width: 140px;
         height: 60px;
@@ -36,6 +40,7 @@
         align-items: center;
         border-radius: 30px;
         border: none;
+        transition: .3s all;
         background: linear-gradient(to top,#f67550,#eea96f);
         box-shadow: 1px 1px 4px .5px rgb(175, 175, 175);
         cursor: pointer;
@@ -45,6 +50,9 @@
             font-family: 'Noto Sans JP', sans-serif;
             padding: 0;
         }
+    }
+    &__Save:hover{
+        transform: scale(1.1);
     }
 }
 @media screen and (min-width: 768px){

@@ -118,7 +118,7 @@ function setProgressBar(app){
         percentBar.style.width = `${percent}%`
     }
     else{
-        percentNumber.innerHTML = `0`
+        percentNumber.innerHTML = `0%`
         percentBar.style.width = `0`
     }
 }
