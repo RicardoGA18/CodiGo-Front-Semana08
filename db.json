@@ -69,6 +69,66 @@
     },
     "priority": "medium",
     "date": "2021-02-07",
-    "done": true
+    "done": false
+    },
+    {
+    "id": "7",
+    "name": "Tarea de CodiGO",
+    "comment": "Hacer los 10 primeros ejercicios de la pagina 768 del libro de Calculo I",
+    "duration": {
+        "hours": 0,
+        "minutes": 30
+    },
+    "priority": "minor",
+    "date": "2022-03-16",
+    "done": false
+    },
+    {
+    "id": "8",
+    "name": "Tarea de musica",
+    "comment": "Hacer los 10 primeros ejercicios de la pagina 768 del libro de Calculo I",
+    "duration": {
+        "hours": 0,
+        "minutes": 30
+    },
+    "priority": "medium",
+    "date": "2022-03-16",
+    "done": false
+    },
+    {
+    "id": "9",
+    "name": "Tarea de arte",
+    "comment": "Hacer los 10 primeros ejercicios de la pagina 768 del libro de Calculo I",
+    "duration": {
+        "hours": 0,
+        "minutes": 30
+    },
+    "priority": "minor",
+    "date": "2022-03-16",
+    "done": false
+    },
+    {
+    "id": "10",
+    "name": "estudiar programacion",
+    "comment": "Hacer los 10 primeros ejercicios de la pagina 768 del libro de Calculo I",
+    "duration": {
+        "hours": 0,
+        "minutes": 30
+    },
+    "priority": "major",
+    "date": "2019-05-20",
+    "done": false
+    },
+    {
+    "id": "11",
+    "name": "estudiar para el examen de comunicacion",
+    "comment": "Hacer los 10 primeros ejercicios de la pagina 768 del libro de Calculo I",
+    "duration": {
+        "hours": 0,
+        "minutes": 30
+    },
+    "priority": "medium",
+    "date": "2019-05-20",
+    "done": false
     }
 ]

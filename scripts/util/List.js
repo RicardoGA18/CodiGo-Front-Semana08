@@ -152,12 +152,12 @@ export default class{
         }
     }
     compareDates(date01 , date02){
-        var day01 = parseInt(date01.substring(8, 10));  
-        var month01 = parseInt(date01.substring(5, 7));  
-        var year01 = parseInt(date01.substring(0, 4));  
-        var day02 = parseInt(date02.substring(8, 10));  
-        var month02 = parseInt(date02.substring(5, 7));  
-        var year02 = parseInt(date02.substring(0, 4));
+        var day01 = parseInt(date01.substring(8, 10)) 
+        var month01 = parseInt(date01.substring(5, 7)) 
+        var year01 = parseInt(date01.substring(0, 4))
+        var day02 = parseInt(date02.substring(8, 10)) 
+        var month02 = parseInt(date02.substring(5, 7))
+        var year02 = parseInt(date02.substring(0, 4))
 
         if( year01 > year02 ){
             return true
@@ -209,5 +209,17 @@ export default class{
         let actualDate = `${year}-${month}-${day}`
 
         return actualDate
+    }
+
+    translateDate(date){
+        let year = parseInt(date.substring(0, 4))
+        let month = parseInt(date.substring(5, 7)) 
+        let day = parseInt(date.substring(8, 10))
+    
+        let months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
+    
+        let translate = `${day} de ${months[month-1]} de ${year}`
+    
+        return translate
     }
 }

@@ -76,3 +76,9 @@ function setProgressBar(app){
         percentBar.style.width = `0`
     }
 }
+
+// Solution Modal Background Bug
+window.addEventListener('resize',()=>{
+    let htmlHeight = document.querySelector("html").offsetHeight
+    infoModal.style.height = `${htmlHeight}px`
+})

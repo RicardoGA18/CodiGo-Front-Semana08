@@ -25,8 +25,8 @@ function setInfoListener(app){
                         taskDuration.innerHTML = `&#128338; ${task.duration.minutes}min`
                     }
                     taskPriority.innerHTML = app.translatePriority(task.priority)
-                    boxPriority.className = `is-${app.getColorPriority(task.priority)}`
-                    taskDate.innerHTML = `&#128197; ${task.date}`
+                    boxPriority.className = `is-${app.getColorPriority(task.priority)} is-center`
+                    taskDate.innerHTML = `&#128197; ${app.translateDate(task.date)}`
 
                     infoModal.style.display = "block"
                 }
