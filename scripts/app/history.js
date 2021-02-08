@@ -20,6 +20,7 @@ const HistoryApp = new List()
 async function initHistoryApp(){
     try{
         await HistoryApp.initApp()
+        await HistoryApp.cleanTasks()
         drawHistoryTasks(historyBox,HistoryApp)
         setInfoListener(HistoryApp)
     }
@@ -27,8 +28,6 @@ async function initHistoryApp(){
         console.error(new Error(error))
     }
 }
-
-console.log(HistoryApp)
 
 initHistoryApp()
 

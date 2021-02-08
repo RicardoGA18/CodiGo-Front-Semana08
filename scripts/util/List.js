@@ -130,6 +130,34 @@ export default class{
         }
     }
 
+    async postTask(task){
+        try{
+            const config = {
+                method: 'POST',
+                body: JSON.stringify(task),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }
+            await fetch('https://601caf281a9c220017060bec.mockapi.io/tasks',config)
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+
+    async cleanTasks(){
+        let tasks = await this.getTasks()
+        let garbage = tasks.filter(task => {
+            if( ( this.getActualDate() != task.date ) && ( task.done == true ) ){
+                return true
+            }else{
+                return false
+            }
+        })
+        await this.deleteTasks(garbage)
+    }
+
     // Auxiliar functions
     translatePriority(priority){
         switch(priority){

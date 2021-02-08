@@ -24,6 +24,7 @@ const HomeApp = new List()
 async function initHomeApp(){
     try{
         await HomeApp.initApp()
+        await HomeApp.cleanTasks()
         drawUndoneTasks(boxList,HomeApp)
         drawDoneTasks(boxDoneList,HomeApp,titleUndone)
         setInfoListener(HomeApp)
@@ -33,8 +34,6 @@ async function initHomeApp(){
         console.log(error)
     }
 }
-
-console.log(HomeApp)
 
 initHomeApp()
 

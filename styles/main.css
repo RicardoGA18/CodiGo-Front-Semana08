@@ -527,6 +527,7 @@ input:focus, textarea:focus, select:focus {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 30px;
+  border: none;
   background: -webkit-gradient(linear, left bottom, left top, from(#f67550), to(#eea96f));
   background: linear-gradient(to top, #f67550, #eea96f);
   -webkit-box-shadow: 1px 1px 4px 0.5px #afafaf;
