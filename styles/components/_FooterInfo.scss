@@ -16,6 +16,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 30px;
+        transition: .3s all;
         background: linear-gradient(to top,#f67550,#eea96f);
         box-shadow: 1px 1px 4px .5px rgb(175, 175, 175);
         cursor: pointer;
@@ -25,6 +26,9 @@
             font-family: 'Noto Sans JP', sans-serif;
             padding: 0;
         }
+    }
+    &__Button:hover{
+        transform: scale(1.1);
     }
 }
 @media screen and (min-width: 768px){

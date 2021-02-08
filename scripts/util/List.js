@@ -59,7 +59,7 @@ export default class{
     async getTask(id){
         try{
             const data = await fetch(`https://601caf281a9c220017060bec.mockapi.io/tasks/${id}`)
-            const task = data.json()
+            const task = await data.json()
             return task
         }
         catch(error){
