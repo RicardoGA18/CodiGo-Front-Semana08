@@ -19,13 +19,25 @@ const HistoryApp = new List()
 
 async function initHistoryApp(){
     try{
+        HistoryApp.openModalCharge()
         await HistoryApp.initApp()
         await HistoryApp.cleanTasks()
         drawHistoryTasks(historyBox,HistoryApp)
         setInfoListener(HistoryApp)
+        HistoryApp.closeModalCharge()
     }
     catch(error){
-        console.error(new Error(error))
+        console.error(error)
+        HistoryApp.closeModalCharge()
+        swal({
+            title: 'Algo salio mal :(',
+            icon: "error",
+            button: 'OK',
+            text: 'Se actualizará la página para solucionarlo'
+        })
+        .then(() => {
+            window.location.reload()
+        })
     }
 }
 
@@ -35,24 +47,60 @@ initHistoryApp()
 btnDone.addEventListener('click', async ()=>{
     try{
         let domTasks = Array.from(document.querySelectorAll('#historyBox input[type="checkbox"]:checked'))
-        let tasks = await HistoryApp.getTasksFromDOM(domTasks)
-        let historyTasks = tasks.filter( task => task.date != HistoryApp.getActualDate() )
-        let todayTasks = tasks.filter( task => task.date == HistoryApp.getActualDate() )
+        let checkTasks = Array.from(document.querySelectorAll('#historyBox input[type="checkbox"]'))
+        if(domTasks.length){
+            HistoryApp.openModalCharge()
+            let tasks = await HistoryApp.getTasksFromDOM(domTasks)
+            let pastTasks = tasks.filter( task => HistoryApp.isPast(task.date) == true )
+            let historyTasks = tasks.filter( task => HistoryApp.isPast(task.date) == false )
 
-        let newTodayTasks = todayTasks.map(task => {
-            task.done = true
-            return task
-        })
+            let newHistoryTasks = historyTasks.map(task => {
+                task.done = true
+                return task
+            })
 
-        await HistoryApp.deleteTasks(historyTasks)
-        await HistoryApp.updateTasks(newTodayTasks)
+            await HistoryApp.deleteTasks(pastTasks)
+            await HistoryApp.updateTasks(newHistoryTasks)
 
-        await HistoryApp.initApp()
-        drawHistoryTasks(historyBox,HistoryApp)
-        setInfoListener(HistoryApp)
+            await HistoryApp.initApp()
+            drawHistoryTasks(historyBox,HistoryApp)
+            setInfoListener(HistoryApp)
+            HistoryApp.closeModalCharge()
+            swal({
+                title: 'Listo!',
+                text: 'Cambios guardados correctamente',
+                icon: "success",
+                button: 'OK',
+            })
+        }
+        else{
+            if(checkTasks.length){
+                swal({
+                    title: 'No hay cambios',
+                    text: 'Selecciona las tareas que hayas realizado',
+                    icon: "warning",
+                    button: 'OK',
+                })
+            }
+            else{
+                swal({
+                    title: 'No hay tareas',
+                    text: 'Agrega nuevas tareas',
+                    icon: "info",
+                    button: 'OK',
+                })
+            }
+        }
     }
     catch(error){
-        console.log(error)
+        console.error(error)
+        HistoryApp.closeModalCharge()
+        swal({
+            title: 'Algo salio mal :(',
+            icon: "error",
+            button: 'OK',
+            text: 'Vuelve a intentarlo mas tarde'
+        })
     }
 })
 

@@ -39,7 +39,7 @@ export default class{
             })
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
         
     }
@@ -52,7 +52,7 @@ export default class{
             return tasks
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
     
@@ -63,7 +63,7 @@ export default class{
             return task
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -78,7 +78,7 @@ export default class{
             return arrTasks
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -89,7 +89,7 @@ export default class{
             })
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -99,7 +99,7 @@ export default class{
                 await this.deleteTask(task.id)
             }
         }catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -115,7 +115,7 @@ export default class{
             await fetch(`https://601caf281a9c220017060bec.mockapi.io/tasks/${task.id}`,config)
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -126,7 +126,7 @@ export default class{
             }
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -142,7 +142,7 @@ export default class{
             await fetch('https://601caf281a9c220017060bec.mockapi.io/tasks',config)
         }
         catch(error){
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -249,5 +249,15 @@ export default class{
         let translate = `${day} de ${months[month-1]} de ${year}`
     
         return translate
+    }
+
+    // Modal Charge
+    openModalCharge(){
+        let modalCharge = document.getElementById("modalCharge")
+        modalCharge.style.display = "flex"
+    }
+    closeModalCharge(){
+        let modalCharge = document.getElementById("modalCharge")
+        modalCharge.style.display = "none"
     }
 }

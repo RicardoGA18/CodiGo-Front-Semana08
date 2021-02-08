@@ -23,15 +23,27 @@ const HomeApp = new List()
 
 async function initHomeApp(){
     try{
+        HomeApp.openModalCharge()
         await HomeApp.initApp()
         await HomeApp.cleanTasks()
         drawUndoneTasks(boxList,HomeApp)
         drawDoneTasks(boxDoneList,HomeApp,titleUndone)
         setInfoListener(HomeApp)
         setProgressBar(HomeApp)
+        HomeApp.closeModalCharge()
     }
     catch(error){
-        console.log(error)
+        console.error(error)
+        HomeApp.closeModalCharge()
+        swal({
+            title: 'Algo salio mal :(',
+            icon: "error",
+            button: 'OK',
+            text: 'Se actualizará la página para solucionarlo'
+        })
+        .then(() => {
+            window.location.reload()
+        })
     }
 }
 
@@ -41,22 +53,57 @@ initHomeApp()
 btnDone.addEventListener('click',async ()=>{
     try{
         let domTasks = Array.from(document.querySelectorAll('#boxList input[type="checkbox"]:checked'))
-        let tasks = await HomeApp.getTasksFromDOM(domTasks)
-        let newTasks = tasks.map(task => {
-            task.done = true
-            return task
-        })
-        await HomeApp.updateTasks(newTasks)
-        await HomeApp.initApp()
-        drawUndoneTasks(boxList,HomeApp)
-        drawDoneTasks(boxDoneList,HomeApp,titleUndone)
-        setInfoListener(HomeApp)
-        setProgressBar(HomeApp)
+        let checkTasks = Array.from(document.querySelectorAll('#boxList input[type="checkbox"]'))
+        if(domTasks.length){
+            HomeApp.openModalCharge()
+            let tasks = await HomeApp.getTasksFromDOM(domTasks)
+            let newTasks = tasks.map(task => {
+                task.done = true
+                return task
+            })
+            await HomeApp.updateTasks(newTasks)
+            await HomeApp.initApp()
+            drawUndoneTasks(boxList,HomeApp)
+            drawDoneTasks(boxDoneList,HomeApp,titleUndone)
+            setInfoListener(HomeApp)
+            setProgressBar(HomeApp)
+            HomeApp.closeModalCharge()
+            swal({
+                title: 'Listo!',
+                text: 'Cambios guardados correctamente',
+                icon: "success",
+                button: 'OK',
+            })
+        }
+        else{
+            if(checkTasks.length){
+                swal({
+                    title: 'No hay cambios',
+                    text: 'Selecciona las tareas que hayas realizado',
+                    icon: "warning",
+                    button: 'OK',
+                })
+            }
+            else{
+                swal({
+                    title: 'No hay tareas',
+                    text: 'Agrega nuevas tareas',
+                    icon: "info",
+                    button: 'OK',
+                })
+            }
+        }
     }
     catch(error){
-        console.log(error)
+        console.error(error)
+        HomeApp.closeModalCharge()
+        swal({
+            title: 'Algo salio mal :(',
+            icon: "error",
+            button: 'OK',
+            text: 'Vuelve a intentarlo mas tarde'
+        })
     }
-    
 })
 
 // Progress Bar

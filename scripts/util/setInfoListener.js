@@ -1,3 +1,22 @@
+// UI Aux setCheckbox Function
+function setCheckboxStyle(app){
+    const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'))
+    checkboxes.forEach(checkbox => {
+        const taskName = checkbox.parentElement.nextElementSibling
+        checkbox.addEventListener('change',event => {
+            if(checkbox.checked){
+                taskName.style.color = "#c5310c"
+                taskName.style.textDecoration = "line-through"
+            }
+            else{
+                taskName.style.color = ""
+                taskName.style.textDecoration = ""
+            }
+        })
+    })
+}
+
+
 function setInfoListener(app){
     const infoModal = document.getElementById("infoModal")
     const taskName = document.getElementById("taskName")
@@ -12,6 +31,7 @@ function setInfoListener(app){
     if(infoButtons.length){
         infoButtons.forEach(button=>{
             button.addEventListener('click', async event =>{
+                app.openModalCharge()
                 let id = event.target.id
                 try{
                     const task = await app.getTask(id)
@@ -28,14 +48,17 @@ function setInfoListener(app){
                     boxPriority.className = `is-${app.getColorPriority(task.priority)} is-center`
                     taskDate.innerHTML = `&#128197; ${app.translateDate(task.date)}`
 
+                    app.closeModalCharge()
                     infoModal.style.display = "block"
                 }
                 catch(error){
-                    console.log(error)
+                    console.error(error)
                 }
             })
         })
     }
+
+    setCheckboxStyle(app)
 
 }
 
